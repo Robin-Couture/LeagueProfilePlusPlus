@@ -10,7 +10,7 @@
   <body>
     <div class="container containerbg rounded pb-3">
         <h1 id="toto" class="text-center text-decoration-underline mt-5 mb-3">Bienvenue sur League Profil ++</h1>
-        <h2 class="text-center">Sur ce site vous pourrez trouver plein d'info en partant seulement d'un nom d'invocateur <br>(seulement en EUW)</h2>
+        <h2 class="text-center">Sur ce site vous pourrez trouver les 5 champions avec le plus de points de maitrise pour un nom d'invocateur donné<br>(seulement en EUW)</h2>
     </div>
     <div class="container text-center rounded p-5 d-flex justify-content-center">
         <input value="NightBlast12" placeholder="Summoner Name..." class="p-2 rounded" type="text" id="name" name="name" required size="100">
@@ -18,9 +18,9 @@
         <button class="btn btn-secondary" id="btnPrincipal" onclick="getValue();">CLIQUE !</button>        
     </div>
     <div class="container text-center">
-        <p class="containerbg py-3 rounded" id="txtPrincipal" style="display: none">Mettre des infos ici</p>
+        <p class="containerbg py-3 rounded" id="txtPrincipal" style="visibility: hidden;">Mettre des infos ici</p>
     </div>
-    <div class="container containerbg text-center">
+    <div class="container containerbg text-center" style="display: none" id="tableauMastery">
       <h1>Top 5 des personnages les plus joués</h1>
       <table class="table align-middle">
         <thead>

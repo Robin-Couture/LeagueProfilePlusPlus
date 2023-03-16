@@ -4,6 +4,7 @@ const apiKey = 'RGAPI-98b25e1c-5015-46ae-95b2-3f15780dd400'
 
 const btnPrincipal = document.getElementById("btnPrincipal");
 const txtPrincipal = document.getElementById("txtPrincipal");
+const tableauMastery = document.getElementById("tableauMastery");
 
 const imgChampion1 = document.getElementById("imgChampion1");
 const nomChampion1 = document.getElementById("nameChampion1");
@@ -51,7 +52,8 @@ function getValue() {
         return;
     } else {
         //Permet d'afficher du contenu caché avant la recherche
-        txtPrincipal.style = "";        
+        txtPrincipal.style = "";
+        tableauMastery.style = "";
 
         //Permet d'afficher la fiche d'un joueur qui contient des infos utiles à partir du summoner ID.
         const summonerInfo = fetchSummonerID().then((httpResponseSummID) => {
