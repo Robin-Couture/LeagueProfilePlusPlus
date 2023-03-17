@@ -79,6 +79,10 @@ https://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/${Champion}.png
 ```
 Voici le résultat si je veux afficher Ashe :
 
+```
+https://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/Ashe.png
+```
+
 ![ashe.png](https://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/Ashe.png)
 
 </br>
