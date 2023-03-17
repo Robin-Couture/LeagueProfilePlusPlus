@@ -13,14 +13,19 @@
         <h2 class="text-center">Sur ce site vous pourrez trouver les 5 champions avec le plus de points de maitrise pour un nom d'invocateur donné<br>(seulement en EUW)</h2>
     </div>
     <div class="container text-center rounded p-5 d-flex justify-content-center">
-        <input value="NightBlast12" placeholder="Summoner Name..." class="p-2 rounded" type="text" id="name" name="name" required size="100">
+        <input placeholder="Summoner Name..." value="" class="p-2 rounded" type="text" id="name" name="name" required size="50">
+        <input placeholder="API Key..." value ="" class="p-2 rounded" type="text" id="API_Key" name="API_Key" required size="50">
 
-        <button class="btn btn-secondary" id="btnPrincipal" onclick="getValue();">CLIQUE !</button>        
+        <button class="btn btn-dark" id="btnPrincipal" onclick="getValue();">CLIQUE !</button>        
+    </div>
+    <div id="lienRiotApi" class="text-center container containerbg pt-3 pb-2 rounded">
+      <a href="https://developer.riotgames.com/">Obtenez votre clé API ici !</p>
     </div>
     <div class="container text-center">
-        <p class="containerbg py-3 rounded" id="txtPrincipal" style="visibility: hidden;">Mettre des infos ici</p>
+        <p class="containerbg py-3 rounded" id="txtPrincipal" style="visibility: hidden;">Mettre des infos ici</a>
     </div>
-    <div class="container containerbg text-center" style="display: none" id="tableauMastery">
+    <div class="container containerbg text-center pt-3" style="display: none" id="tableauMastery">
+      <button class="btn btn-dark col-12" id="btnPrincipal" onclick="location.reload();">Cherchez un autre joueur</button>
       <h1>Top 5 des personnages les plus joués</h1>
       <table class="table align-middle">
         <thead>

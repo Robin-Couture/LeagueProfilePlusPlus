@@ -1,6 +1,8 @@
 //query des images des champs https://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/Zeri.png
 
-const apiKey = 'RGAPI-98b25e1c-5015-46ae-95b2-3f15780dd400'
+const champNom = document.getElementById("name");
+const champApi = document.getElementById("API_Key");
+const lienRiotApi = document.getElementById("lienRiotApi");
 
 const btnPrincipal = document.getElementById("btnPrincipal");
 const txtPrincipal = document.getElementById("txtPrincipal");
@@ -39,7 +41,8 @@ function txtChange(txtID, txt) {
 }
 
 function getValue() {
-    const summonerName = document.getElementById("name").value;
+    const summonerName = champNom.value;
+    const apiKey = champApi.value;
 
     //Fonction pour obtenir le summoner ID à partir du nom d'invocateur.
     function fetchSummonerID() {
@@ -47,13 +50,19 @@ function getValue() {
     }    
     
     //Vérifie que j'ai bien un pseudo mis dans ma barre de recherche.
-    if(summonerName === ""){
-        alert("Veuillez saisir un nom d'invocateur");
+    if(summonerName === "" || apiKey === ""){
+        if(summonerName === '') alert("Veuillez saisir un nom d'invocateur");
+        if(apiKey === '') alert("Veuillez saisir une clé API");
+        
         return;
     } else {
         //Permet d'afficher du contenu caché avant la recherche
         txtPrincipal.style = "";
         tableauMastery.style = "";
+        btnPrincipal.style = "display: none";
+        champNom.style = "display: none";
+        champApi.style = "display: none";
+        lienRiotApi.style = "display: none";
 
         //Permet d'afficher la fiche d'un joueur qui contient des infos utiles à partir du summoner ID.
         const summonerInfo = fetchSummonerID().then((httpResponseSummID) => {
@@ -62,7 +71,7 @@ function getValue() {
         }).then((summonerID) => { //Permet de récupérer l'encrypted summoner id.
             console.log('summonerID', summonerID);
             summonerEncryptedID = summonerID.id;
-            txtPrincipal.textContent = `Invocateur encrypted ID : ${summonerEncryptedID}`;
+            txtPrincipal.textContent = `Vous regardez le profil de ${summonerName}`;
 
             function fetchSummonerMastery(EncryptedSummonerID) {
                 summonerEncryptedID = EncryptedSummonerID;
