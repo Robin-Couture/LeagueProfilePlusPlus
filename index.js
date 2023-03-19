@@ -95,7 +95,7 @@ function getValue() {
                     infoPts.push(summonerMastery[index].championPoints);
                 }
 
-                champions = fetch('/src/json/champion.json').then((httpResponseChampion) => {
+                champions = fetch('./src/json/champion.json').then((httpResponseChampion) => {
                     return httpResponseChampion.json();
                 }).then((championList) => {
                     championData = championList.data;
